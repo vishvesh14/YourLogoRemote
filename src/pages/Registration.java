@@ -15,7 +15,10 @@ public class Registration extends Base{
 	WebElement SignIn;
 	
 	@FindBy(xpath="//input[@id='email_create']")
-	public WebElement Registration_Email;
+	WebElement Registration_Email;
+	
+	@FindBy(id="SubmitCreate")
+	WebElement Create_Account_Button;
 	
 	public Registration(WebDriver driver){
 		this.driver=driver;
@@ -32,5 +35,9 @@ public class Registration extends Base{
 	
 	public void EnterEmail(String x){
 		Registration_Email.sendKeys(x);
+	}
+	
+	public void ClickCreateAccountButton(){
+		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(Create_Account_Button)).click();
 	}
 }

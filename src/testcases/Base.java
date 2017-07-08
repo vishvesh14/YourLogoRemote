@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
@@ -17,13 +16,6 @@ public class Base {
 	public WebDriver driver;
 	public WebDriverWait wait;
 	String base_url = "http://automationpractice.com/index.php";
-	
-	String excel_path = "G:/Workplace/YourLogo/src/utilities/ExcelRead.xlsx";
-	String sheetName = "Sheet1";
-	
-	XSSFWorkbook ExcelWBook;
-	XSSFSheet ExcelWSheet;
-	XSSFCell Cell;
 	
   @BeforeTest
   public void beforeTest() {
@@ -44,6 +36,7 @@ public class Base {
 
   @AfterTest
   public void afterTest() {
+	  System.out.println("Done");
 	  //driver.quit();
   }
 

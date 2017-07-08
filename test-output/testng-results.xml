@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64810" started-at="2017-06-25T10:28:07Z" finished-at="2017-06-25T10:29:11Z">
+  <suite name="Default suite" duration-ms="37707" started-at="2017-07-08T19:02:22Z" finished-at="2017-07-08T19:03:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64810" started-at="2017-06-25T10:28:07Z" finished-at="2017-06-25T10:29:11Z">
+    <test name="Default test" duration-ms="37707" started-at="2017-07-08T19:02:22Z" finished-at="2017-07-08T19:03:00Z">
       <class name="testcases.Registatration_testcase">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="beforeTest" is-config="true" duration-ms="60609" started-at="2017-06-25T15:58:07Z" finished-at="2017-06-25T15:59:07Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="beforeTest" is-config="true" duration-ms="32060" started-at="2017-07-09T00:32:22Z" finished-at="2017-07-09T00:32:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="Registration()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="Registration" duration-ms="4190" started-at="2017-06-25T15:59:07Z" finished-at="2017-06-25T15:59:11Z">
+        <test-method status="PASS" signature="Registration()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="Registration" duration-ms="5624" started-at="2017-07-09T00:32:54Z" finished-at="2017-07-09T00:33:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Registration -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="afterTest" is-config="true" duration-ms="0" started-at="2017-06-25T15:59:11Z" finished-at="2017-06-25T15:59:11Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testcases.Registatration_testcase@42e26948]" name="afterTest" is-config="true" duration-ms="0" started-at="2017-07-09T00:33:00Z" finished-at="2017-07-09T00:33:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
