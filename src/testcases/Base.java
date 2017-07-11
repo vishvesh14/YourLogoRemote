@@ -17,6 +17,12 @@ public class Base {
 	public WebDriverWait wait;
 	String base_url = "http://automationpractice.com/index.php";
 	
+	String excel_path = "G:/Workplace/YourLogo/src/utilities/ExcelRead.xlsx";
+	String sheetName = "Sheet1";
+	XSSFWorkbook ExcelWBook;
+	XSSFSheet ExcelWSheet;
+	XSSFCell Cell;
+	
   @BeforeTest
   public void beforeTest() {
 	  String base_url = "http://automationpractice.com/index.php";
@@ -26,12 +32,9 @@ public class Base {
 	  ffProfile.setAcceptUntrustedCertificates(true);
 	  ffProfile.setAssumeUntrustedCertificateIssuer(false);
 	  System.setProperty("webdriver.gecko.driver", "G:/Workplace/AutomationSetupFiles/Geckdriver/geckodriver1.exe");
+	  driver.manage().window().maximize();
 	  driver = new FirefoxDriver(ffProfile);
 	  driver.get(base_url);
-	  
-//	  System.setProperty("webdriver.chrome.driver","G://Workplace//AutomationSetupFiles//ChromeDriverSelenium//chromedriver");
-//	  driver = new ChromeDriver();
-
   }
 
   @AfterTest

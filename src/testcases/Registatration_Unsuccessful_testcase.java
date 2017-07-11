@@ -1,26 +1,36 @@
 package testcases;
 
+import java.io.FileInputStream;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
-
 import pages.Registration;
-import utilities.ExcelReadWrite;
 
 public class Registatration_Unsuccessful_testcase extends Base{
- 
-  @Test
-  public void Registration() {
-	  try {
-	  Registration regobj = new Registration(driver);
-	  ExcelReadWrite regex = new ExcelReadWrite(regobj);
-	  
-	  regobj.ClickSignIn();
-	  regobj.ClickEmail();
-	  regex.Read_Write_Excel();
-	  regobj.ClickCreateAccountButton();
-	  }
-	  catch(Exception e){
-		  System.out.println(e);
-	  }
-	  
-  }
+
+	@Test
+	public void Registration_Unsuccessful() {
+		Registration regobj = new Registration(driver);
+		
+		try {
+			regobj.ClickSignIn();
+			regobj.ClickEmail();
+
+			FileInputStream ExcelFile = new FileInputStream(excel_path);
+			ExcelWBook = new XSSFWorkbook(ExcelFile);
+			ExcelWSheet = ExcelWBook.getSheet(sheetName);
+			
+			int row_count = ExcelWSheet.getLastRowNum();
+			
+			for(int i=1;i<=row_count;i++){
+				Cell = ExcelWSheet.getRow(i).getCell(0);
+				String celldata = Cell.getStringCellValue();
+				regobj.EnterEmail(celldata);
+				regobj.ClickCreateAccountButton();
+				Thread.sleep(5000);
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
 }
