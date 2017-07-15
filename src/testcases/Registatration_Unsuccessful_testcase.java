@@ -13,11 +13,11 @@ public class Registatration_Unsuccessful_testcase extends Base{
 //Object Created for Class Registration
 		Registration regobj = new Registration(driver);
 		
-//Expected Error Message
+		//Expected Error Message
 		String expected ="Invalid email address";
 		
 		try {
-//Calling Methods from Registration Class
+			//Calling Methods from Registration Class
 			regobj.ClickSignIn();
 			regobj.ClickEmail();
 
@@ -25,24 +25,21 @@ public class Registatration_Unsuccessful_testcase extends Base{
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 			ExcelWSheet = ExcelWBook.getSheet(sheetName);
 			
-//Getting the Excel File Row count
+			//Getting the Excel File Row count
 			int row_count = ExcelWSheet.getLastRowNum();
 			
-//Looping through the row
+			//Looping through the row
 			for(int i=1;i<=row_count;i++){
-//Getting data from Rows
-				Cell = ExcelWSheet.getRow(i).getCell(0);
+				Cell = ExcelWSheet.getRow(i).getCell(0);			//Getting data from Rows
 				String celldata = Cell.getStringCellValue();
 				regobj.EnterEmail(celldata);
-//Calling method from Registration
-				regobj.ClickCreateAccountButton();
+				regobj.ClickCreateAccountButton();					//Calling method from Registration	
 				Thread.sleep(5000);
 				
-//Checking the Div that has the error message
+				//Checking the Div that has the error message
 				boolean create_account_error_div = driver.findElement(By.id("create_account_error")).isDisplayed();
 				System.out.println(create_account_error_div);
-//Getting Actual Error Message
-				String actual = driver.findElement(By.id("create_account_error")).getText();
+				String actual = driver.findElement(By.id("create_account_error")).getText();		//Getting Actual Error Message
 				while(create_account_error_div == true){
 					if(expected.equals(actual)){
 						System.out.println("Expected: "+actual);
