@@ -32,15 +32,15 @@ public class Base {
 	  ffProfile.setAcceptUntrustedCertificates(true);
 	  ffProfile.setAssumeUntrustedCertificateIssuer(false);
 	  System.setProperty("webdriver.gecko.driver", "G:/Workplace/AutomationSetupFiles/Geckdriver/geckodriver1.exe");
-	  driver.manage().window().maximize();
 	  driver = new FirefoxDriver(ffProfile);
+	  driver.manage().window().maximize();
 	  driver.get(base_url);
   }
 
   @AfterTest
   public void afterTest() {
 	  System.out.println("Done");
-	  //driver.quit();
+	  driver.quit();
   }
 
 }
